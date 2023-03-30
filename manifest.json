@@ -1,0 +1,23 @@
+{
+
+  "manifest_version": 2,
+  "name": "AutoFarmer",
+  "version": "1.0",
+
+  "description": "Helps with handling the farm",
+
+  "icons": {
+    "48": "icons/autofarmer-48.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/autofarmer-48.png",
+    "default_title": "AutoFarmer",
+    "default_popup": "popup/choose_action.html"
+  }
+
+}
