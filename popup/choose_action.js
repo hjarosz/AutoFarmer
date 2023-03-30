@@ -21,15 +21,29 @@ function listenForClicks() {
       });
     }
 
-    function changePlantSize(size){
+    function changePlantSize(size) {
+      var optionFieldName = "#plant_size_" + size;
+
+      var current = document.querySelector("#plant_options > .activeConfigBtn");
+      if (current != null)
+        current.classList.remove("activeConfigBtn");
+      document.querySelector(optionFieldName).classList.add("activeConfigBtn");
+
       console.log("Plant size changed to: " + size);
       plantSize = size;
     }
 
-    function changeFoodType(type){
+    function changeFoodType(type) {
+      var optionFieldName = "#food_type_" + type;
+
+      var current = document.querySelector("#food_options > .activeConfigBtn");
+      if (current != null)
+        current.classList.remove("activeConfigBtn");
+      document.querySelector(optionFieldName).classList.add("activeConfigBtn");
+
       console.log("Food type changed to: " + type);
       foodType = type;
-    } 
+    }
 
     function reportError(error) {
       console.error(`Could not execute script: ${error}`);
@@ -57,7 +71,7 @@ function listenForClicks() {
     else if (e.target.id == "plant_size_2") {
       changePlantSize(2);
     }
-    else if (e.target.id == "plant_size_3") {
+    else if (e.target.id == "plant_size_4") {
       changePlantSize(4);
     }
     else if (e.target.id == "food_type_1") {
@@ -65,7 +79,7 @@ function listenForClicks() {
     }
     else if (e.target.id == "food_type_2") {
       changeFoodType(2);
-    }  
+    }
   });
 
 }

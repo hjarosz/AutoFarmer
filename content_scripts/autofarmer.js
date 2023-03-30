@@ -5,11 +5,37 @@
   window.hasRun = true;
 
   function plant(size) {
-    for (var i = 1; i <= 120; i++) {
-      var field = document.getElementById('f' + i)
-      if (field == null)
-        continue
-      field.click();
+    var fieldNumber = 0;
+    var horizontalIncrement = 1;
+    var verticalIncrement = 1;
+
+    if(size == 2)
+      horizontalIncrement = 2;
+    else if (size == 4){
+      horizontalIncrement = 2;
+      verticalIncrement = 2;
+    }
+
+    for (var j = 0; j <= 9; j = j + verticalIncrement) {
+      for (var i = 1; i <= 12; i = i + horizontalIncrement) {
+        fieldNumber = (j * 12) + i;
+        var field = document.getElementById('f' + i)
+        if (field == null)
+          continue
+        field.click();
+      }
+    }
+
+    document.getElementById("giessen").click();
+
+    for (var j = 0; j <= 9; j = j + verticalIncrement) {
+      for (var i = 1; i <= 12; i = i + horizontalIncrement) {
+        fieldNumber = (j * 12) + i;
+        var field = document.getElementById('f' + i)
+        if (field == null)
+          continue
+        field.click();
+      }
     }
   }
 
@@ -21,17 +47,17 @@
     }
   }
 
-  function getFoodTypeName(type){
+  function getFoodTypeName(type) {
     var building = document.getElementById("building_inner").className;
-    if(building == "building_inner_back2"){
+    if (building == "building_inner_back2") {
       type = type + 0;
     } else if (building == "building_inner_back3") {
       type = type + 2;
     }
-  
+
     var result = "feed_tt" + type + "_normal";
     console.log("deducted food type: " + result);
-    
+
     return result;
   }
 
