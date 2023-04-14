@@ -27,13 +27,13 @@
         if (field == null)
           continue
         field.click();
-        await delay(10);
+        await delay(5);
       }
     }
 
-    await delay(500);
+    await delay(10);
     document.getElementById("giessen").click();
-    await delay(500);
+    await delay(10);
 
     for (var j = 0; j <= 9; j = j + verticalIncrement) {
       for (var i = 1; i <= 12; i = i + horizontalIncrement) {
@@ -42,7 +42,9 @@
         if (field == null)
           continue
         field.click();
-        await delay(10);
+        await delay(5);
+        document.getElementById("giessen").click();
+        await delay(5);
       }
     }
   }
@@ -62,6 +64,10 @@
     } else if (building == "building_inner_back3") {
       type = type + 2;
     }
+    else if (building == "building_inner_back3") {
+      type = type + 4;
+    } 
+    
 
     var result = "feed_tt" + type + "_normal";
     console.log("deducted food type: " + result);
