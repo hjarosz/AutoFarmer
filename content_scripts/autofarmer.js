@@ -64,7 +64,7 @@
     } else if (building == "building_inner_back3") {
       type = type + 2;
     }
-    else if (building == "building_inner_back3") {
+    else if (building == "building_inner_back4") {
       type = type + 4;
     } 
     
